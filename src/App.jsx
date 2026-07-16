@@ -1,8 +1,7 @@
+import Login from './pages/Login/Login';
+
 function App() {
-  return (
-          <h1>TalcFlow</h1>
-          
-  )
+  return <Login />
 }
 
-export default App
+export default App;
