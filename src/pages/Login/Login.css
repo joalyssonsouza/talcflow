@@ -6,25 +6,25 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: #eef2f7;
+    background: var(--background-color);
 }
 
-.Login{
+.login{
     display: flex;
     min-height: 100vh;
 }
 
 .login__panel{
     flex: 1;
-    background: #0f3d75;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 60px;
+    padding: 80px;
 }
 
 .login__form{
@@ -34,28 +34,30 @@ body{
     justify-content: center;
     align-items: center;
 
-    padding: 60px;
+    padding: 80px;
 }
 
 .login__card{
     width: 100%;
     max-width: 420px;
 
-    background: white;
+    background: var(--white);
 
-    padding: 40px;
+    padding: 45px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,.10);
+    transition: .3s;
+    animation: showCard .6s ease;
 } 
 
 .login__card h2{
     font-size: 2rem;
-    color: #1f2937;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
 .login__card p{
-    color: #6b7280;
+    color: var(--text-muted);
     margin-bottom: 30px;
 }
 
@@ -83,7 +85,9 @@ body{
 }
 
 .login__card input:focus{
-    border-color: #0f3d75;
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 3px rgba(15,61,117,.15);
 }
 
 .login__card button{
@@ -91,14 +95,87 @@ body{
     padding: 15px;
     border: none;
     border-radius: 8px;
-    background: #0f3d75;
+    background: var(--primary-color);
     color: white;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: .3s;
+    box-shadow: 0 8px 20px rgba(15,61,117,.25);
 }
 
 .login__card button:hover{
-    background: #144b8c;
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.login__brand p{
+    max-width: 350px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: .9;
+}
+
+.login__logo{
+    width: 80px;
+    height: 80px;
+
+    background: var(--white);
+
+    color: var(--primary-color);
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+@keyframes showCard {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px){
+
+    .login{
+        flex-direction: column;
+    }
+
+
+    .login__panel{
+
+        padding: 40px;
+
+        min-height: 40vh;
+
+    }
+
+
+    .login__form{
+
+        padding: 40px;
+
+    }
+
+
+}
+
+.login__brand h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
 }

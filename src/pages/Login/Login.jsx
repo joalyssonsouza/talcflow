@@ -5,8 +5,18 @@ function Login () {
         <main className='login'>
 
             <section className='login__panel'>
+
+                <div className='login__brand'>
+
+                    <div className='login__logo'>
+                        TF
+                    </div>
+
                 <h1>TalcoFlow</h1>
-                <p>Plataforma de Controle Operacional</p>
+                <p>Gerencia processos, acompanhe operações e tenha mais controle sobre sua produção.</p>
+
+                </div>
+
             </section>
 
             <section className='login__form'>
