@@ -1,0 +1,19 @@
+.production{
+
+    padding: 40px;
+
+}
+
+.production h1{
+
+    color: var(--primary-color);
+
+    margin-bottom: 15px;
+
+}
+
+.production p{
+
+    color: var(--text-muted);
+
+}

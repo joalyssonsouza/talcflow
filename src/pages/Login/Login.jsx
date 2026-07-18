@@ -1,6 +1,15 @@
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login () {
+    const navigate = useNavigate();
+
+    function handleLogin(event){
+        event.preventDefault();
+
+        navigate('/dashboard');
+    }
+
     return (
         <main className='login'>
 
@@ -26,7 +35,7 @@ function Login () {
                 <h2>Bem-vindo de volta</h2>
                 <p>Insira suas credencias para continuar.</p>
 
-            <form>
+            <form onSubmit={handleLogin}>
 
                 <label htmlFor="usuario">Usuário</label>
 
