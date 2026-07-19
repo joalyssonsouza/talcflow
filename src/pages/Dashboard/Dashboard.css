@@ -31,7 +31,7 @@
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 25px;
 
@@ -123,5 +123,125 @@
         grid-template-columns: 1fr;
 
     }
+
+}
+
+.dashboard__charts{
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+}
+
+.chart__card{
+
+    background: var(--white);
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+    min-height: 280px;
+
+}
+
+.chart__card h3{
+
+    color: var(--text-color);
+
+    margin-bottom: 15px;
+
+}
+
+.chart__card p{
+
+    color: var(--text-muted);
+
+}
+
+@media (max-width: 900px){
+
+    .dashboard__charts{
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+.dashboard__operations{
+
+    margin-top: 35px;
+
+    background: var(--white);
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+.dashboard__operations h3{
+
+    margin-bottom: 20px;
+
+    color: var(--text-color);
+
+}
+
+
+.dashboard__operations table{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.dashboard__operations th,
+.dashboard__operations td{
+
+    padding: 15px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.dashboard__operations th{
+
+    color: var(--primary-color);
+
+}
+
+
+.dashboard__operations tbody tr:hover{
+
+    background: #f8fafc;
+
+}
+
+.dashboard__update{
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: var(--text-muted);
+
+    font-size: .9rem;
 
 }
