@@ -7,7 +7,8 @@ import {
     FaIndustry,
     FaUsers,
     FaClipboardList,
-    FaChartPie
+    FaChartPie,
+    FaClipboardCheck
 } from 'react-icons/fa';
 
 function Sidebar() {
@@ -38,18 +39,64 @@ function Sidebar() {
                         </li>
                     
                     <li>
-                        <FaClipboardList/>
-                        <span>Setores</span>
+
+                            <NavLink
+                                to="/sectors"
+                                className={({isActive}) => isActive ? "active" : ""}
+                            >
+
+                                <FaClipboardList />
+
+                                <span>
+                                    Setores
+                                </span>
+
+                            </NavLink>
+
                         </li>
+
+                        <li>
+                            <NavLink to="/checklist">
+
+                                <FaClipboardCheck />
+
+                                <span>
+                                    Checklist
+                                </span>
+
+                            </NavLink>
+                        </li>
+
                     <li>
-                        <FaUsers />
-                        <span>Usuário</span>
+
+                        <NavLink
+                            to="/users"
+                            className={({isActive}) => isActive ? "active" : ""}
+                        >
+
+                            <FaUsers />
+
+                            <span>
+                                Usuário
+                            </span>
+
+                        </NavLink>
 
                     </li>
                     <li>
-                        <FaChartPie />
-                        <span>Relatório</span>
-                        </li>
+                        <NavLink 
+                            to="/reports"
+                            className={({isActive}) => isActive ? "active" : ""}
+                        >
+
+                            <FaChartPie />
+
+                            <span>
+                                Relatório
+                            </span>
+
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         </aside>

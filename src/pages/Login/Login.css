@@ -4,120 +4,250 @@
     box-sizing: border-box;
 }
 
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background: var(--background-color);
 }
 
+
 .login{
+
     display: flex;
+
     min-height: 100vh;
+
 }
 
+
+/* PAINEL ESQUERDO */
+
 .login__panel{
+
     flex: 1;
-    background: var(--primary-color);
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
     color: var(--white);
 
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 80px;
+
 }
+
+
+
+/* ÁREA DO FORMULÁRIO */
 
 .login__form{
+
     flex: 1;
 
+    position: relative;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 80px;
+
 }
 
+
+
+/* CARD LOGIN */
+
 .login__card{
+
     width: 100%;
+
     max-width: 420px;
 
     background: var(--white);
 
     padding: 45px;
+
     border-radius: 16px;
+
     box-shadow: 0 20px 40px rgba(0,0,0,.10);
+
     transition: .3s;
+
     animation: showCard .6s ease;
-} 
+
+}
+
+
+.login__card:hover{
+
+    transform: translateY(-5px);
+
+}
+
+
+
+/* TEXTOS */
 
 .login__card h2{
+
     font-size: 2rem;
+
     color: var(--text-color);
+
     margin-bottom: 10px;
+
 }
+
 
 .login__card p{
+
     color: var(--text-muted);
+
     margin-bottom: 30px;
+
 }
+
+
+
+/* FORM */
 
 .login__card form{
+
     display: flex;
+
     flex-direction: column;
+
 }
+
+
 
 .login__card label{
+
     font-size: 0.9rem;
+
     font-weight: 600;
+
     margin-bottom: 8px;
+
     color: #374151;
+
 }
 
+
+
 .login__card input{
+
     padding: 14px;
+
     margin-bottom: 20px;
+
     border: 1px solid #d1d5db;
+
     border-radius: 8px;
 
     font-size: 1rem;
+
     outline: none;
+
     transition: .3s;
+
 }
 
+
+
 .login__card input:focus{
+
     border-color: var(--primary-color);
 
     box-shadow: 0 0 0 3px rgba(15,61,117,.15);
+
 }
+
+
+
+/* BOTÃO */
 
 .login__card button{
+
     margin-top: 10px;
+
     padding: 15px;
+
     border: none;
+
     border-radius: 8px;
+
     background: var(--primary-color);
+
     color: white;
+
     font-size: 1rem;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: .3s;
+
     box-shadow: 0 8px 20px rgba(15,61,117,.25);
+
 }
+
+
 
 .login__card button:hover{
+
     background: var(--secondary-color);
+
     transform: translateY(-2px);
+
 }
+
+
+
+/* MARCA */
 
 .login__brand p{
+
     max-width: 350px;
+
     font-size: 1.1rem;
+
     line-height: 1.6;
+
     opacity: .9;
+
 }
 
+
+
+.login__brand h1{
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+
 .login__logo{
+
     width: 80px;
+
     height: 80px;
 
     background: var(--white);
@@ -127,32 +257,84 @@ body{
     border-radius: 20px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     font-size: 2rem;
+
     font-weight: bold;
 
     margin-bottom: 25px;
+
     box-shadow: 0 10px 25px rgba(0,0,0,.15);
+
 }
+
+
+
+/* ANIMAÇÃO */
 
 @keyframes showCard {
+
     from{
+
         opacity: 0;
+
         transform: translateY(20px);
+
     }
 
+
     to{
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
+
 }
+
+.login__security{
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: .85rem;
+
+    color: var(--text-muted);
+
+}
+
+
+
+/* RODAPÉ */
+
+.login__footer{
+
+    position: absolute;
+
+    bottom: 20px;
+
+    color: var(--text-muted);
+
+    font-size: .85rem;
+
+}
+
+
+
+/* RESPONSIVO */
 
 @media (max-width: 768px){
 
     .login{
+
         flex-direction: column;
+
     }
 
 
@@ -172,10 +354,10 @@ body{
     }
 
 
-}
+    .login__brand h1{
 
-.login__brand h1{
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+        font-size: 2.2rem;
+
+    }
+
 }

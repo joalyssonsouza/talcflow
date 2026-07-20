@@ -64,3 +64,19 @@
 .sidebar__menu a:visited{
     color: var(--white);
 }
+
+.sidebar__menu a{
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+}

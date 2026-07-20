@@ -1,16 +1,64 @@
 import './Dashboard.css';
+import { useEffect, useState } from 'react';
 import Card from '../../components/Card/Card';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Header from '../../components/Header/Header';
 
+import Charts from '../../components/Charts/Charts';
+
 function Dashboard() {
+
+
+    const [checklist, setChecklist] = useState(null);
+
+    const [historico, setHistorico] = useState([]);
+
+    useEffect(() => {
+
+    const dados = localStorage.getItem("checklist");
+
+    if(dados){
+
+        setChecklist(JSON.parse(dados));
+
+    }
+
+    const dadosHistorico = localStorage.getItem("historicoChecklist");
+
+        if(dadosHistorico){
+
+            setHistorico(JSON.parse(dadosHistorico));
+
+        }
+
+}, []);
+
+    const itensConcluidos = checklist
+    ? Object.values(checklist.status).filter(
+        (item) => item === "Concluído"
+    ).length
+    : 0;
+
+    const statusOperacao = itensConcluidos === 4
+    ? "Normal"
+    : "Atenção";
+
+    const ultimaOperacao = checklist
+    ? {
+        data: checklist.data,
+        operador: checklist.operador,
+        status: statusOperacao
+    }
+    : null;
+
+    const dataAtualizacao = new Date().toLocaleString();
 
     const dashboardData = [
             {
-                title: "Produção do Dia",
-                value: "120 t",
-                description: "Produção registrada hoje"
+                title: "Checklist",
+                value: `${itensConcluidos}/4`,
+                description: "Itens concluídos"
             },
             {
                 title: "Concentração",
@@ -23,10 +71,12 @@ function Dashboard() {
                 description: "Valor atual"
             },
             {
-                title: "Status",
-                value: "Normal",
-                description: "Operação estável"
-            }
+            title: "Status",
+            value: checklist ? statusOperacao : "Sem dados",
+            description: checklist
+                ? "Baseado no checklist"
+                : "Nenhum checklist encontrado"
+        }
         ];
 
     return (
@@ -45,7 +95,7 @@ function Dashboard() {
                     <h2>Visão Geral</h2> 
 
                     <span className='dashboard__update'>
-                        Última atualização: Hoje às 08:00
+                        Última atualização: {dataAtualizacao}
                     </span>
 
                     <p>
@@ -69,15 +119,9 @@ function Dashboard() {
 
                     <div className="dashboard__charts">
 
-                    <div className="chart__card">
-                        <h3>Concentração do Talco</h3>
-                        <p>Gráfico será implementado na próxima etapa.</p>
-                    </div>
+                       <Charts />
 
-                    <div className="chart__card">
-                        <h3>Consumo de Talco</h3>
-                        <p>Gráfico será implementado na próxima etapa.</p>
-                    </div>
+                   </div>
 
                     <div className="dashboard__operations">
 
@@ -96,34 +140,53 @@ function Dashboard() {
 
                                 <tbody>
 
-                                    <tr>
-                                        <td>19/07/2026</td>
-                                        <td>Joalisson</td>
-                                        <td>42</td>
-                                        <td>Normal</td>
-                                    </tr>
+                                {historico.length > 0 ? (
+
+                                    historico.map((operacao, index) => (
+
+                                        <tr key={index}>
+
+                                            <td>
+                                                {operacao.data}
+                                            </td>
+
+                                            <td>
+                                                {operacao.operador}
+                                            </td>
+
+                                            <td>
+                                                42%
+                                            </td>
+
+                                            <td>
+                                                {operacao.status.agua === "Concluído"
+                                                    ? "Normal"
+                                                    : "Atenção"}
+                                            </td>
+
+                                        </tr>
+
+                                    ))
+
+                                ) : (
 
                                     <tr>
-                                        <td>19/07/2026</td>
-                                        <td>Carlos</td>
-                                        <td>43</td>
-                                        <td>Normal</td>
+
+                                        <td colSpan="4">
+                                            Nenhuma operação registrada
+                                        </td>
+
                                     </tr>
 
-                                    <tr>
-                                        <td>19/07/2026</td>
-                                        <td>Ana</td>
-                                        <td>41</td>
-                                        <td>Normal</td>
-                                    </tr>
+                                )}
 
-                                </tbody>
+                            </tbody>
 
                             </table>
 
                         </div>
 
-                </div>
+                
 
                 </section>
 
@@ -132,5 +195,4 @@ function Dashboard() {
         </div>
     );
 }
-
 export default Dashboard;

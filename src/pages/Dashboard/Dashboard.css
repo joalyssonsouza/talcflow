@@ -138,6 +138,10 @@
 
 }
 
+.dashboard__charts .chart{
+    min-height: 350px;
+}
+
 .chart__card{
 
     background: var(--white);
