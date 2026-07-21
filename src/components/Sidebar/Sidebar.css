@@ -80,3 +80,27 @@
     width: 100%;
 
 }
+
+@media (max-width: 768px){
+
+    .sidebar{
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .sidebar__logo{
+        margin-bottom: 20px;
+    }
+
+    .sidebar__menu ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sidebar__menu li{
+        padding: 10px;
+    }
+
+}
