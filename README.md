@@ -1,52 +1,109 @@
-# TalcFlow
+# 🏭 TalcFlow
 
 > Sistema web para controle operacional industrial desenvolvido com React.
 
-🚧 **Status:** Em desenvolvimento
+🌐 **Demonstração:**  
+https://joalyssonsouza.github.io/talcflow/
 
 ---
 
-## 📖 Sobre o Projeto
+## 📌 Sobre o Projeto
 
-O **TalcFlow** é um sistema web desenvolvido para auxiliar no controle operacional de processos industriais.
+O **TalcFlow** é uma aplicação web desenvolvida para auxiliar no acompanhamento e controle de processos operacionais industriais.
 
-O projeto foi inspirado em uma rotina real de acompanhamento de produção, utilizando uma implementação própria e dados fictícios para fins de estudo e desenvolvimento.
+O projeto foi inspirado em uma rotina real de monitoramento de produção, utilizando uma implementação própria e dados fictícios para fins de estudo e desenvolvimento.
 
-Seu objetivo é centralizar informações importantes da operação, permitindo registrar produções, acompanhar indicadores, controlar checklists e gerenciar ocorrências.
+A aplicação tem como objetivo organizar informações operacionais, facilitar o acompanhamento de indicadores e centralizar registros importantes da operação.
 
-Este projeto faz parte do meu portfólio como estudante de **Análise e Desenvolvimento de Sistemas**, reunindo conhecimentos de desenvolvimento web, banco de dados e engenharia de software.
+Este projeto faz parte do meu portfólio como estudante de **Análise e Desenvolvimento de Sistemas**, aplicando conceitos de desenvolvimento Front-End, organização de componentes, gerenciamento de estados e estruturação de aplicações web.
 
 ---
 
-## 🎯 Objetivos
+## 🎯 Objetivos do Sistema
 
-- Automatizar registros operacionais.
-- Centralizar informações da produção.
+- Centralizar informações da operação industrial.
 - Facilitar o acompanhamento de indicadores.
-- Melhorar a organização dos processos.
+- Organizar registros de produção.
+- Controlar checklists operacionais.
+- Melhorar a visualização dos dados através de dashboards.
 - Desenvolver uma aplicação utilizando boas práticas de desenvolvimento.
 
 ---
 
-## 🚀 Tecnologias
+# 🚀 Funcionalidades
 
-### Front-end
+## 🔐 Tela de Login
 
-- React
+- Interface de acesso ao sistema.
+- Design desenvolvido com foco em experiência do usuário.
+- Estrutura preparada para futura autenticação real.
+
+---
+
+## 📊 Dashboard
+
+- Visualização geral da operação.
+- Cards com indicadores principais.
+- Gráficos de acompanhamento.
+- Histórico das últimas operações.
+
+---
+
+## 🏭 Ordens de Produção
+
+- Registro e acompanhamento das informações de produção.
+- Organização dos dados operacionais.
+
+---
+
+## ✅ Checklist Operacional
+
+- Registro das verificações da operação.
+- Controle de status dos itens:
+  - Vazão da água
+  - Concentração do talco
+  - Nível da rosca
+  - Verificação do tanque
+
+- Registro de observações.
+- Armazenamento dos dados utilizando LocalStorage.
+
+---
+
+## 📈 Relatórios
+
+- Estrutura para visualização de informações operacionais.
+
+---
+
+## 🏢 Setores
+
+- Organização dos setores do sistema.
+
+---
+
+## 👥 Usuários
+
+- Estrutura inicial para gerenciamento de usuários.
+
+---
+
+# 🛠️ Tecnologias Utilizadas
+
+## Front-end
+
+- React.js
 - Vite
 - JavaScript
-- CSS
+- CSS3
+- React Router
+- Recharts
 
-### Back-end _(planejado)_
+## Armazenamento
 
-- Node.js
-- Express
+- LocalStorage
 
-### Banco de Dados _(planejado)_
-
-- MySQL
-
-### Ferramentas
+## Ferramentas
 
 - Git
 - GitHub
@@ -55,93 +112,25 @@ Este projeto faz parte do meu portfólio como estudante de **Análise e Desenvol
 
 ---
 
-## 📋 Funcionalidades Planejadas
-
-- 🔐 Sistema de Login
-- 📊 Dashboard
-- 🏭 Cadastro de Produção
-- ✅ Checklist Operacional
-- ⚠️ Registro de Ocorrências
-- 📈 Indicadores de Produção
-- 📄 Relatórios
-- 👥 Controle de Usuários
-
----
-
-## 📂 Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
 ```text
 src
-├── assets
 ├── components
-├── contexts
-├── hooks
-├── layouts
+│   ├── Card
+│   ├── Charts
+│   ├── Header
+│   └── Sidebar
+│
 ├── pages
+│   ├── Login
+│   ├── Dashboard
+│   ├── Production
+│   ├── Checklist
+│   ├── Reports
+│   ├── Sectors
+│   └── Users
+│
 ├── routes
-├── services
-├── styles
-└── utils
-
-docs
-├── requisitos.md
-├── fluxo.md
-├── banco.md
-└── versoes.md
-```
-
----
-
-## 🛣 Roadmap
-
-### Sprint 0 — Planejamento e Estrutura
-
-- Estrutura inicial do projeto
-- Configuração do React com Vite
-- Organização das pastas
-- Documentação inicial
-
-### Sprint 1 — Interface Inicial
-
-- Tela de Login
-- Componentes básicos
-- Primeiro protótipo visual
-
-### Sprint 2 — Dashboard
-
-- Indicadores principais
-- Cards de informações
-- Visualização de dados
-
-### Sprint 3 — Produção
-
-- Cadastro de produção
-- Cálculos operacionais
-
-### Sprint 4 — Checklist
-
-- Registro de verificações operacionais
-
-### Sprint 5 — Ocorrências
-
-- Registro e acompanhamento de problemas
-
-### Sprint 6 — API
-
-- Desenvolvimento do back-end
-
-### Sprint 7 — Banco de Dados
-
-- Modelagem e integração com MySQL
-
-### Sprint 8 — Deploy
-
-- Publicação da aplicação
-
----
-
-## 📌 Status do Projeto
-
-🚧 Projeto em desenvolvimento.
-
-O TalcFlow será desenvolvido de forma incremental, seguindo organização por Sprints, versionamento com Git e documentação contínua.
+│
+└── styles
