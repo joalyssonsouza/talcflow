@@ -8,6 +8,7 @@
 .dashboard__content{
     flex: 1;
 
+    min-width: 0;
     display: flex;
     flex-direction: column;
 }
@@ -258,6 +259,7 @@
 
     .dashboard__body{
         padding: 20px;
+        overflow-x: hidden;
     }
 
     .dashboard__cards{
@@ -282,11 +284,14 @@
 
     .dashboard__operations{
         padding: 15px;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .dashboard__operations table{
-        min-width: 600px;
+        min-width: auto;
+        width: 100%;
+        display: block;
+        overflow-x: auto;
     }
 
 }

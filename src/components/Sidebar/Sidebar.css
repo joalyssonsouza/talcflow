@@ -84,23 +84,54 @@
 @media (max-width: 768px){
 
     .sidebar{
+
         width: 100%;
+
         min-height: auto;
-        padding: 20px;
+
+        padding: 15px 20px;
+
     }
+
 
     .sidebar__logo{
-        margin-bottom: 20px;
+
+        margin-bottom: 15px;
+
     }
+
+
+    .sidebar__logo h2{
+
+        font-size: 1.5rem;
+
+    }
+
 
     .sidebar__menu ul{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
 
     .sidebar__menu li{
+
         padding: 10px;
+
+    }
+
+
+    .sidebar__menu a{
+
+        white-space: nowrap;
+
+        font-size: .9rem;
+
     }
 
 }

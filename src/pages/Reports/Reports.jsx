@@ -20,13 +20,13 @@ function Reports(){
         }
 
 
-        const dadosHistorico = localStorage.getItem("historicoChecklist");
+        const dadosProducao = localStorage.getItem("producoes");
 
-        if(dadosHistorico){
+        if(dadosProducao){
 
-            setHistorico(JSON.parse(dadosHistorico));
+           setHistorico(JSON.parse(dadosProducao));
 
-        }
+}
 
     }, []);
 
@@ -34,16 +34,18 @@ function Reports(){
     const totalOperacoes = historico.length;
 
 
-    const operadorAtual = checklist
-        ? checklist.operador
-        : "Nenhum";
+    const operadorAtual = historico.length > 0
+    ? historico[historico.length - 1].operador
+    : "Nenhum";
 
 
-    const itensConcluidos = checklist
-        ? Object.values(checklist.status).filter(
-            (item) => item === "Concluído"
-        ).length
-        : 0;
+    const itensConcluidos = historico.length > 0
+    ? Object.values(
+        historico[historico.length - 1].checklist
+    ).filter(
+        (item) => item === true
+    ).length
+    : 0;
 
 
     return (
@@ -118,6 +120,62 @@ function Reports(){
 
             </div>
 
+            <div className="reports__history">
+
+    <h2>
+        Histórico de Operações
+    </h2>
+
+
+    <div className="table__container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Data</th>
+                    <th>Ordem</th>
+                    <th>Operador</th>
+                    <th>Máquina</th>
+                    <th>Concentração</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {historico.map((item) => (
+
+                    <tr key={item.id}>
+
+                        <td>{item.data}</td>
+
+                        <td>{item.ordem}</td>
+
+                        <td>{item.operador}</td>
+
+                        <td>{item.maquina}</td>
+
+                        <td>{item.concentracao}</td>
+
+                        <td>
+                            Normal
+                        </td>
+
+                    </tr>
+
+                ))}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
 
         </div>
 
